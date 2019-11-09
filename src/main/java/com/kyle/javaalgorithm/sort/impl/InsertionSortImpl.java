@@ -17,19 +17,6 @@ public class InsertionSortImpl implements Sort {
     }
     @Override
     public int[] sort(int[] source) {
-        int current;
-        for (int i = 1; i < source.length; i++) {
-            current = source[i];
-            for (int j = i; j > 0; j--) {
-                if (source[j - 1] > current) {
-                    source[j] = source[j - 1];
-                    source[j - 1] = current;
-                } else {
-                    source[j] = current;
-                    break;
-                }
-            }
-        }
-        return source;
+
     }
 }

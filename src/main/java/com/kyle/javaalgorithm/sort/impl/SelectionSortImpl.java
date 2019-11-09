@@ -10,7 +10,7 @@ import com.kyle.javaalgorithm.sort.Sort;
 public class SelectionSortImpl implements Sort {
 
     public static void main(String[] args) {
-        int[] source = {2, 1, 4, 3, 6, 5};
+        int[] source = {2, 1, 4, 3, 6, 5, 2, 2, 3, 3};
         source = new SelectionSortImpl().sort(source);
         for (int i : source) {
             System.out.println(i);
@@ -20,28 +20,19 @@ public class SelectionSortImpl implements Sort {
 
     @Override
     public int[] sort(int[] source) {
-        int minIndex, temp;
+        int minIndex;
         for (int i = 0; i < source.length - 1; i++) {
             minIndex = i;
             for (int j = i + 1; j < source.length; j++) {
-                if (source[minIndex] > source[j]) {
+                if (source[j] > source[minIndex]) {
                     minIndex = j;
                 }
             }
             if (minIndex != i) {
-//                temp = source[minIndex];
-//                source[minIndex] = source[i];
-//                source[i] = temp;
-
                 source[i] = source[i] ^ source[minIndex];
                 source[minIndex] = source[i] ^ source[minIndex];
                 source[i] = source[i] ^ source[minIndex];
-
-//                source[i] = source[i] + source[minIndex];
-//                source[minIndex] = source[i] - source[minIndex];
-//                source[i] = source[i] - source[minIndex];
             }
-
         }
         return source;
     }

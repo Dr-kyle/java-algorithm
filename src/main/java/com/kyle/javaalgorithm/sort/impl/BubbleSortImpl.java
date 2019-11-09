@@ -25,9 +25,9 @@ public class BubbleSortImpl implements Sort {
     public int[] sort(int[] source) {
         int temp;
         for (int i = 0; i < source.length - 1; i++) {
+            //  j = 0; 易错
             for (int j = 0; j < source.length - 1 - i; j++) {
                 if (source[j] > source[j + 1]) {
-                    // 这一块可以有好几种交换方式
                     temp = source[j];
                     source[j] = source[j + 1];
                     source[j + 1] = temp;
